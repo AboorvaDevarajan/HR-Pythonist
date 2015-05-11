@@ -1,0 +1,44 @@
+import math
+a1,a2 = map(float,input().split())
+b1,b2 = map(float,input().split())
+def print_val(val1,val2):
+    if val1 == 0 and val2 == 0:
+        print("0.00")
+    elif val2 == 0:
+        print("%.2f" %(val1))
+    elif val1 == 0:
+        op2 = '' 
+        if val2 < 0:
+            op2='-'
+        print("%s%.2fi" %(op2,abs(val2)))
+    else:
+        op2 = '+'
+        if val2 < 0:
+            op2 = '-'
+        print("%.2f %s %.2fi" %(val1,op2,abs(val2)))
+def add(a1,a2,b1,b2):
+    val1 = a1+b1
+    val2 = a2+b2
+    print_val(val1,val2)
+def sub(a1,a2,b1,b2):
+    val1 = a1-b1
+    val2 = a2-b2
+    print_val(val1,val2)
+def mult(a,b,c,d):
+    val1 = a*c - b*d
+    val2 = a*d + b*c
+    print_val(val1,val2)
+def div(a,b,c,d):
+    val1 = (a*c + b*d) / (c*c + d*d)
+    val2 = (b*c - a*d) / (c*c + d*d)
+    print_val(val1,val2)
+def modulo(a,b):
+    val = ((math.sqrt(pow(a,2)+pow(b,2))))
+    print("%.2f" %(val))
+    
+add(a1,a2,b1,b2)
+sub(a1,a2,b1,b2)
+mult(a1,a2,b1,b2)
+div(a1,a2,b1,b2)
+modulo(a1,a2)
+modulo(b1,b2)
